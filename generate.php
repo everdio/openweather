@@ -1,8 +1,8 @@
 <?php
 foreach ($this->openweather["api"] as $api => $url) {
-    
     $model = new \Modules\OpenWeather\Model;
     $model->class = $this->labelize($api);
+    $model->label = $this->labelize($api);
     $model->namespace = $this->model["namespace"];
     $model->appid = $this->openweather["appid"];
     $model->url = $url;
