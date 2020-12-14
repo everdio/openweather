@@ -2,7 +2,7 @@
 namespace Modules\OpenWeather {
     use \Components\Validation;
     use \Components\Validator;     
-    final class Model extends \Components\Core\Mapper\Model {
+    final class Model extends \Components\Core\Adapter\Model {
         use \Modules\OpenWeather;
         public function __construct() {
             parent::__construct([
@@ -15,7 +15,6 @@ namespace Modules\OpenWeather {
                 "lon" => new Validation(false, [new Validator\IsDouble])
             ]);
             
-            $this->model = __DIR__ . DIRECTORY_SEPARATOR . "Model.tpl";
             $this->use = "\Modules\OpenWeather";            
         }
 
