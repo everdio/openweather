@@ -2,6 +2,8 @@
 namespace Modules\OpenWeather {
     trait Api {
         use \Modules\Node;
+        use \Modules\OpenWeather;
+        
         public function xpath($query) : \DOMNodeList {
             $request = new $this->request;
             $request->lat = $this->lat;
